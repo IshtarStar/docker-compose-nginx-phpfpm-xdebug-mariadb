@@ -7,8 +7,7 @@ Repository: https://github.com/IshtarStar/docker-compose-nginx-phpfpm-xdebug-mar
 * Uses [PHP 8.1.1](https://www.php.net) for better performance, lower CPU and memory usage
 * And [composer the dependency manager for PHP](https://getcomposer.org) to start easy your project
 * Debugging with [Xdebug 3](https://xdebug.org)
-* Database storage with MariaDB 10.7.1
-* Multi-platform, supporting guarantee
+* Database storage with [MariaDB 10.7.1](https://mariadb.org)
 
 See also:
 [Blog-Post: Dockerize your PHP application with Nginx and PHP8-FPM](https://marcit.eu/en/2021/04/28/dockerize-webserver-nginx-php8/)
