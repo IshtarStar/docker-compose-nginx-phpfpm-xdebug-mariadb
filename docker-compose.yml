@@ -1,0 +1,40 @@
+version: "3.9"
+services:
+    nginx:
+        image: "nginx:alpine"
+        restart: always
+        working_dir: /app
+        links:
+            - php-fpm
+        volumes:
+            - ".:/app"
+            - "./docker/nginx/nginx.conf:/etc/nginx/conf/default.conf"
+        ports:
+            - "80:80"
+
+    php-fpm:
+        build: docker/php-fpm
+        restart: always
+        working_dir: /app
+        links:
+            - mariadb
+        volumes:
+            - ".:/app"
+            - "./docker/php-fpm/php-overrides.ini:/usr/local/etc/php/conf/666-overrides.ini"
+
+    mariadb:
+        image: "mariadb:10.7.1"
+        restart: always
+        working_dir: /app
+        volumes:
+            - ".:/app"
+            - "./mariadb/data:/var/lib/mysql"
+            - "./mariadb/logs:/var/log/mysql"
+            - "./mariadb/conf:/etc/mysql"
+        environment:
+            MARIADB_ROOT_PASSWORD: "${MARIADB_ROOT_PASSWORD}"
+            MARIADB_DATABASE: "${MARIADB_DATABASE}"
+            MARIADB_USER: "${MARIADB_USER}"
+            MARIADB_PASSWORD: "${MARIADB_PASSWORD}"
+        ports:
+            - "3306:3306"
