@@ -1,2 +1,5 @@
 .idea
 .DS_Store
+mariadb/data/*
+mariadb/logs/*
+mariadb/conf/*
