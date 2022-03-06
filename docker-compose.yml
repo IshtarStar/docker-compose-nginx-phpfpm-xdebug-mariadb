@@ -23,7 +23,7 @@ services:
             - "./docker/php-fpm/php-overrides.ini:/usr/local/etc/php/conf/666-overrides.ini"
 
     mariadb:
-        image: "mariadb:10.7.1"
+        image: "mariadb:10.7.3"
         restart: always
         working_dir: /app
         volumes:
