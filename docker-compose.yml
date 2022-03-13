@@ -20,7 +20,7 @@ services:
             - mariadb
         volumes:
             - ".:/app"
-            - "./docker/php-fpm/php-overrides.ini:/usr/local/etc/php/conf/666-overrides.ini"
+            - "./docker/php-fpm/php-overrides.ini:/usr/local/etc/php/conf.d/666-overrides.ini"
 
     mariadb:
         image: "mariadb:10.7.3"
