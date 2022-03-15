@@ -1,4 +1,4 @@
-# Docker compose PHP-FPM 8.1.4, Xdebug 3, Nginx Webserver and MariaDB
+# Docker compose Nginx, PHP-FPM 8.1.4, Xdebug 3 and MariaDB
 
 ![docker](https://img.shields.io/badge/Docker-compose-brightgreen.svg)
 ![nginx](https://img.shields.io/badge/nginx-on_apline-brightgreen.svg)
@@ -16,4 +16,6 @@
 See also:
 [Blog-Post: Dockerize your PHP application with Nginx and PHP8-FPM](https://marcit.eu/en/2021/04/28/dockerize-webserver-nginx-php8/)
 
+## Not included: Recommendation database management
 
+* [Adminer](https://github.com/vrana/adminer/releases)
