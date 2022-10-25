@@ -40,3 +40,8 @@ services:
             MARIADB_PASSWORD: "${MARIADB_PASSWORD}"
         ports:
             - "3306:3306"
+
+    redis:
+        image: "redis:7.0.5-alpine"
+        environment:
+            ALLOW_EMPTY_PASSWORD: "yes"
