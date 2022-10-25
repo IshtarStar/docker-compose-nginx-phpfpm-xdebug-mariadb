@@ -25,7 +25,7 @@ services:
             XDEBUG_MODE: "debug"
 
     mariadb:
-        image: "mariadb:10.9.2"
+        image: "mariadb:10.9.3"
         restart: always
         working_dir: /app
         volumes:
