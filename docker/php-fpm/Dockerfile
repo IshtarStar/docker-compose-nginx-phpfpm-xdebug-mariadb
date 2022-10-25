@@ -1,4 +1,4 @@
-FROM php:8.2.0RC1-fpm
+FROM php:8.2.0RC4-fpm
 WORKDIR "/app"
 
 RUN apt-get update
