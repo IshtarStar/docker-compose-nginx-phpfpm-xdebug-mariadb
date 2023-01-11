@@ -1,7 +1,7 @@
 version: "3.9"
 services:
     nginx:
-        image: "nginx:1.23.2-alpine"
+        image: "nginx:1.23.3-alpine"
         restart: always
         working_dir: /app
         links:
@@ -25,7 +25,7 @@ services:
             XDEBUG_MODE: "debug"
 
     mariadb:
-        image: "mariadb:10.9.3"
+        image: "mariadb:10.10.2"
         restart: always
         working_dir: /app
         volumes:
@@ -42,6 +42,6 @@ services:
             - "3306:3306"
 
     redis:
-        image: "redis:7.0.5-alpine"
+        image: "redis:7.0.7-alpine"
         environment:
             ALLOW_EMPTY_PASSWORD: "yes"
