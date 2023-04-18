@@ -42,6 +42,6 @@ services:
             - "3306:3306"
 
     redis:
-        image: "redis:7.0.10-alpine"
+        image: "redis:7.0.11-alpine"
         environment:
             ALLOW_EMPTY_PASSWORD: "yes"
