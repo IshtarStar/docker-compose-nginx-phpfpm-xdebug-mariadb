@@ -1,4 +1,4 @@
-FROM php:8.3-rc-fpm-alpine
+FROM php:8.3-rc-fpm
 WORKDIR "/app"
 
 # Update
