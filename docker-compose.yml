@@ -1,7 +1,7 @@
 version: "3.9"
 services:
     nginx:
-        image: "nginx:1.25.1-alpine"
+        image: "nginx:1.25.2-alpine"
         restart: always
         working_dir: /app
         links:
