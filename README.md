@@ -1,4 +1,4 @@
-# Docker compose PHP FPM 8.3, Xdebug 3, Nginx 1.25.3, Redis 7.2.3 and MariaDB 11.1.3
+# Docker compose PHP 8.3, Xdebug 3, Nginx 1.25.3, Redis 7.2.3 and MariaDB 11.1.3
 
 ![docker](https://img.shields.io/badge/Docker-compose-brightgreen.svg)
 ![php](https://img.shields.io/badge/PHP_FPM-8.3.0RC6-brightgreen.svg)
