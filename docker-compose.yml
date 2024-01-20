@@ -25,12 +25,12 @@ services:
             XDEBUG_MODE: "debug"
 
     redis:
-        image: "redis:7.2.3-alpine"
+        image: "redis:7.2.4-alpine"
         environment:
             ALLOW_EMPTY_PASSWORD: "yes"
 
     mariadb:
-        image: "mariadb:11.1.3"
+        image: "mariadb:11.3.1-rc"
         restart: always
         working_dir: /app
         volumes:
