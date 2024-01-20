@@ -29,17 +29,39 @@ jobs:
               run: |
                   docker-compose -f docker-compose.yml up --build -d
 
-            -   name: Test Xdebug
-                run: |
-                    sleep 10 # Wait for the containers to fully initialize
-                    XDEBUG_OUTPUT=$(curl -s http://localhost/index.php)
-                    if [[ ! "$XDEBUG_OUTPUT" =~ "Xdebug" ]]; then
-                      echo "Xdebug test failed. Not found in phpinfo() output."
-                      exit 1
-                    else
-                      echo "Xdebug test successful."
-                    fi
+            - name: Test Xdebug
+              run: |
+                  sleep 10 # Wait for the containers to fully initialize
+                  XDEBUG_OUTPUT=$(curl -s http://localhost/index.php)
+                  if [[ ! "$XDEBUG_OUTPUT" =~ "Xdebug" ]]; then
+                    echo "Xdebug test failed. Not found in phpinfo() output."
+                    exit 1
+                  else
+                    echo "Xdebug test successful."
+                  fi
 
-            -   name: Cleanup
-                run: |
-                    docker-compose -f docker-compose.yml down
+            - name: Test Redis
+              run: |
+                  sleep 5
+                  REDIS_TEST=$(docker-compose exec -T redis redis-cli ping)
+                  if [[ "$REDIS_TEST" != "PONG" ]]; then
+                    echo "Redis test failed. No PONG response."
+                    exit 1
+                  else
+                    echo "Redis test successful."
+                  fi
+
+            - name: Test MariaDB
+              run: |
+                  sleep 5
+                  MYSQL_TEST=$(docker-compose exec -T mariadb mysql -u${{ secrets.MARIADB_USER }} -p${{ secrets.MARIADB_PASSWORD }} -e "SHOW DATABASES;")
+                  if [[ ! "$MYSQL_TEST" =~ "${MARIADB_DATABASE}" ]]; then
+                    echo "MariaDB test failed. Cannot show databases."
+                    exit 1
+                  else
+                    echo "MariaDB test successful."
+                  fi
+
+            - name: Cleanup
+              run: |
+                  docker-compose -f docker-compose.yml down
