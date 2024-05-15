@@ -29,7 +29,7 @@ services:
             ALLOW_EMPTY_PASSWORD: "yes"
 
     mariadb:
-        image: "mariadb:11.4.1-rc"
+        image: "mariadb:11.3.2"
         restart: always
         working_dir: /app
         volumes:
