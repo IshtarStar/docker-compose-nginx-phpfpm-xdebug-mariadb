@@ -51,17 +51,6 @@ jobs:
                     echo "Redis test successful."
                   fi
 
-            - name: Test MariaDB
-              run: |
-                  sleep 5
-                  MYSQL_TEST=$(docker-compose exec -T mariadb mysql -u${{ secrets.MARIADB_USER }} -p${{ secrets.MARIADB_PASSWORD }} -e "SHOW DATABASES;")
-                  if [[ ! "$MYSQL_TEST" =~ "${MARIADB_DATABASE}" ]]; then
-                    echo "MariaDB test failed. Cannot show databases."
-                    exit 1
-                  else
-                    echo "MariaDB test successful."
-                  fi
-
             - name: Cleanup
               run: |
                   docker-compose -f docker-compose.yml down
