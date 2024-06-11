@@ -46,7 +46,7 @@ jobs:
 
             - name: Run PHPUnit tests
               run: |
-                  docker-compose exec -T php-fpm ./vendor/bin/phpunit tests --colors
+                  docker-compose exec -T php-fpm ./vendor/bin/phpunit tests
 
             - name: Test Redis
               run: |
