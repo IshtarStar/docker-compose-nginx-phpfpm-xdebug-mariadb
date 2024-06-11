@@ -52,6 +52,10 @@ jobs:
                   fi
 
             - name: Test MariaDB
+              env:
+                  MARIADB_USER: ${{ secrets.MARIADB_USER }}
+                  MARIADB_PASSWORD: ${{ secrets.MARIADB_PASSWORD }}
+                  MARIADB_DATABASE: ${{ secrets.MARIADB_DATABASE }}
               run: |
                   sleep 10 # Wait for MariaDB to fully initialize
                   MARIADB_TEST=$(docker-compose exec -T mariadb mariadb -u${MARIADB_USER} -p${MARIADB_PASSWORD} -e "SHOW DATABASES LIKE '${MARIADB_DATABASE}';")
