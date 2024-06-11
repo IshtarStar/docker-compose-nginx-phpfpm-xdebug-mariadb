@@ -27,11 +27,11 @@ jobs:
 
             - name: Build and test services
               run: |
-                  docker-compose -f docker-compose.yml up --build -d
+                  docker compose -f compose.yml up --build -d
 
             - name: Test Xdebug
               run: |
-                  sleep 10 # Wait for the containers to fully initialize
+                  sleep 5 # Wait for the containers to fully initialize
                   XDEBUG_OUTPUT=$(curl -s http://localhost/index.php)
                   if [[ ! "$XDEBUG_OUTPUT" =~ "Xdebug" ]]; then
                     echo "Xdebug test failed. Not found in phpinfo() output."
@@ -42,16 +42,16 @@ jobs:
 
             - name: Install Composer dependencies
               run: |
-                  docker-compose exec -T php-fpm composer install
+                  docker compose exec -T php-fpm composer install
 
             - name: Run PHPUnit tests
               run: |
-                  docker-compose exec -T php-fpm ./vendor/bin/phpunit tests
+                  docker compose exec -T php-fpm ./vendor/bin/phpunit tests
 
             - name: Test Redis
               run: |
                   sleep 5 # Wait for Redis to fully initialize
-                  REDIS_TEST=$(docker-compose exec -T redis redis-cli ping)
+                  REDIS_TEST=$(docker compose exec -T redis redis-cli ping)
                   if [[ "$REDIS_TEST" != "PONG" ]]; then
                     echo "Redis test failed. No PONG response."
                     exit 1
@@ -65,8 +65,8 @@ jobs:
                   MARIADB_PASSWORD: ${{ secrets.MARIADB_PASSWORD }}
                   MARIADB_DATABASE: ${{ secrets.MARIADB_DATABASE }}
               run: |
-                  sleep 10 # Wait for MariaDB to fully initialize
-                  MARIADB_TEST=$(docker-compose exec -T mariadb mariadb -u${MARIADB_USER} -p${MARIADB_PASSWORD} -e "SHOW DATABASES LIKE '${MARIADB_DATABASE}';")
+                  sleep 5 # Wait for MariaDB to fully initialize
+                  MARIADB_TEST=$(docker compose exec -T mariadb mariadb -u${MARIADB_USER} -p${MARIADB_PASSWORD} -e "SHOW DATABASES LIKE '${MARIADB_DATABASE}';")
                   if [[ "$MARIADB_TEST" != *"${MARIADB_DATABASE}"* ]]; then
                     echo "MariaDB test failed. Database not found."
                     exit 1
@@ -76,4 +76,4 @@ jobs:
 
             - name: Cleanup
               run: |
-                  docker-compose -f docker-compose.yml down
+                  docker compose -f compose.yml down

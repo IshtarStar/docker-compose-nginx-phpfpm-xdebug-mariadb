@@ -1,4 +1,4 @@
-# Docker compose PHP 8.3.8, Xdebug 3.4.0, Nginx 1.27.0, Redis 7.2.5 and MariaDB 11.4.2
+# Docker compose PHP 8.3.8, Xdebug 3.3.2, Nginx 1.27.0, Redis 7.2.5 and MariaDB 11.4.2
 
 ![docker](https://img.shields.io/badge/Docker-compose-brightgreen.svg)
 ![nginx](https://img.shields.io/badge/nginx-1.27.0-brightgreen.svg)
@@ -8,7 +8,7 @@
 ![redis](https://img.shields.io/badge/Redis-7.2.5-brightgreen.svg)
 ![mariadb](https://img.shields.io/badge/MariaDB-11.4.2-brightgreen.svg)
 
-* Easy setup with [docker-compose](https://docs.docker.com/compose/) and [Dockerfile](https://docs.docker.com/engine/reference/builder/) under usage from [Docker](https://www.docker.com)
+* Easy setup with [docker compose](https://docs.docker.com/compose/) and [Dockerfile](https://docs.docker.com/engine/reference/builder/) under usage from [Docker](https://www.docker.com)
 * Uses [PHP 8.3.8](https://www.php.net) for better performance, lower CPU and memory usage
 * And [composer the dependency manager for PHP](https://getcomposer.org) to start easy your project
 * Built on the lightweight [nginx 1.27.0](https://nginx.org) webserver
@@ -27,17 +27,17 @@
 
 2. **Build and start the Docker containers:**
    ```sh
-   docker-compose up --build -d
+   docker compose up --build -d
    ```
 
 3. **Install Composer dependencies:**
    ```sh
-   docker-compose exec -T php-fpm composer install
+   docker compose exec -T php-fpm composer install
    ```
 
 4. **Run PHPUnit tests:**
    ```sh
-   docker-compose exec -T php-fpm ./vendor/bin/phpunit tests
+   docker compose exec -T php-fpm ./vendor/bin/phpunit tests
    ```
 
 ## Example PHPUnit Test
