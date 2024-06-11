@@ -54,7 +54,7 @@ jobs:
             - name: Test MariaDB
               run: |
                   sleep 10 # Wait for MariaDB to fully initialize
-                  MARIADB_TEST=$(docker-compose exec -T mariadb mysql -u${MARIADB_USER} -p${MARIADB_PASSWORD} -e "SHOW DATABASES LIKE '${MARIADB_DATABASE}';")
+                  MARIADB_TEST=$(docker-compose exec -T mariadb mariadb -u${MARIADB_USER} -p${MARIADB_PASSWORD} -e "SHOW DATABASES LIKE '${MARIADB_DATABASE}';")
                   if [[ "$MARIADB_TEST" != *"${MARIADB_DATABASE}"* ]]; then
                     echo "MariaDB test failed. Database not found."
                     exit 1
