@@ -21,7 +21,7 @@ services:
             - ".:/app"
             - "./docker/php-fpm/php-overrides.ini:/usr/local/etc/php/conf.d/php-overrides.ini"
         environment:
-            XDEBUG_MODE: "debug"
+            XDEBUG_MODE: "coverage"
 
     redis:
         image: "redis:7.2.5-alpine"

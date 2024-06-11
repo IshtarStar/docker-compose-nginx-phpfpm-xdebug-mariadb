@@ -46,7 +46,7 @@ jobs:
 
             - name: Run PHPUnit tests
               run: |
-                  docker compose exec -T php-fpm ./vendor/bin/phpunit tests
+                  docker compose exec -T php-fpm ./vendor/bin/phpunit --coverage-text --testdox tests
 
             - name: Test Redis
               run: |
