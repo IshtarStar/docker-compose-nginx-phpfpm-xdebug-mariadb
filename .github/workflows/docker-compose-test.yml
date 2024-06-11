@@ -40,6 +40,14 @@ jobs:
                     echo "Xdebug test successful."
                   fi
 
+            - name: Install Composer dependencies
+              run: |
+                  docker-compose exec -T php-fpm composer install
+
+            - name: Run PHPUnit tests
+              run: |
+                  docker-compose exec -T php-fpm ./vendor/bin/phpunit tests --colors
+
             - name: Test Redis
               run: |
                   sleep 5 # Wait for Redis to fully initialize

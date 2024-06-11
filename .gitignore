@@ -6,3 +6,4 @@ mariadb/conf/*
 !mariadb/data/.gitignore
 !mariadb/logs/.gitignore
 !mariadb/conf/.gitignore
+vendor
