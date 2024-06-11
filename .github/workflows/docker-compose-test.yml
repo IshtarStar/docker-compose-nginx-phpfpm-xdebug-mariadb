@@ -42,13 +42,24 @@ jobs:
 
             - name: Test Redis
               run: |
-                  sleep 5
+                  sleep 5 # Wait for Redis to fully initialize
                   REDIS_TEST=$(docker-compose exec -T redis redis-cli ping)
                   if [[ "$REDIS_TEST" != "PONG" ]]; then
                     echo "Redis test failed. No PONG response."
                     exit 1
                   else
                     echo "Redis test successful."
+                  fi
+
+            - name: Test MariaDB
+              run: |
+                  sleep 10 # Wait for MariaDB to fully initialize
+                  MARIADB_TEST=$(docker-compose exec -T mariadb mysql -u${MARIADB_USER} -p${MARIADB_PASSWORD} -e "SHOW DATABASES LIKE '${MARIADB_DATABASE}';")
+                  if [[ "$MARIADB_TEST" != *"${MARIADB_DATABASE}"* ]]; then
+                    echo "MariaDB test failed. Database not found."
+                    exit 1
+                  else
+                    echo "MariaDB test successful."
                   fi
 
             - name: Cleanup
