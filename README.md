@@ -35,9 +35,9 @@
    docker compose exec -T php-fpm composer install
    ```
 
-4. **Run PHPUnit tests:**
+4. **Run PHPUnit tests with code coverage:**
    ```sh
-   docker compose exec -T php-fpm ./vendor/bin/phpunit tests
+   docker compose exec -T php-fpm ./vendor/bin/phpunit --coverage-text --testdox tests
    ```
 
 ## Example PHPUnit Test
@@ -49,13 +49,17 @@ An example PHPUnit test is included in the `tests` directory:
 
 <?php
 
+declare(strict_types=1);
+
 use PHPUnit\Framework\TestCase;
+use App\Example;
 
 class ExampleTest extends TestCase
 {
     public function testExample()
     {
-        $this->assertTrue(true);
+        $example = new Example();
+        $this->assertTrue($example->doSomething());
     }
 }
 ```
