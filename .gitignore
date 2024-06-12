@@ -1,10 +1,10 @@
 .idea
 .phpunit.cache
 .DS_Store
-mariadb/data/*
-mariadb/logs/*
-mariadb/conf/*
-!mariadb/data/.gitignore
-!mariadb/logs/.gitignore
-!mariadb/conf/.gitignore
+docker/mariadb/data/*
+docker/mariadb/logs/*
+docker/mariadb/conf/*
+!docker/mariadb/data/.gitignore
+!docker/mariadb/logs/.gitignore
+!docker/mariadb/conf/.gitignore
 vendor

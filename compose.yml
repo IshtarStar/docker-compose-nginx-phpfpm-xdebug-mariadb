@@ -34,9 +34,9 @@ services:
         working_dir: /app
         volumes:
             - ".:/app"
-            - "./mariadb/data:/var/lib/mysql"
-            - "./mariadb/logs:/var/log/mysql"
-            - "./mariadb/conf:/etc/mysql"
+            - "./docker/mariadb/data:/var/lib/mysql"
+            - "./docker/mariadb/logs:/var/log/mysql"
+            - "./docker/mariadb/conf:/etc/mysql"
         environment:
             MARIADB_ROOT_PASSWORD: "${MARIADB_ROOT_PASSWORD}"
             MARIADB_DATABASE: "${MARIADB_DATABASE}"
