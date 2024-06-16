@@ -10,7 +10,7 @@
 
 # Goal of this project
 
-The goal of this project is to create a Docker Compose setup for a PHP-FPM, Xdebug, Nginx web server, and MariaDB environment. This setup uses PHP 8.3 for better performance, lower CPU, and memory usage, along with Composer, the dependency manager for PHP, to easily start your project. The setup is built on the lightweight Nginx web server and includes debugging capabilities with Xdebug and Redis.
+The primary goal of this project is to create a streamlined and efficient development environment using Docker Compose. This environment will consist of PHP-FPM, Xdebug, Nginx web server, and MariaDB, enabling developers to quickly and easily start working on their PHP projects.
 
 # Services
 
