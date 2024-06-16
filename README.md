@@ -8,6 +8,12 @@
 ![redis](https://img.shields.io/badge/Redis-7.2.5-brightgreen.svg)
 ![mariadb](https://img.shields.io/badge/MariaDB-11.4.2-brightgreen.svg)
 
+# Goal of this project
+
+The goal of this project is to create a Docker Compose setup for a PHP-FPM, Xdebug, Nginx web server, and MariaDB environment. This setup uses PHP 8.3 for better performance, lower CPU, and memory usage, along with Composer, the dependency manager for PHP, to easily start your project. The setup is built on the lightweight Nginx web server and includes debugging capabilities with Xdebug and Redis.
+
+# Services
+
 * Easy setup with [docker compose](https://docs.docker.com/compose/) and [Dockerfile](https://docs.docker.com/engine/reference/builder/) under usage from [Docker](https://www.docker.com)
 * Uses [PHP 8.3.8](https://www.php.net) for better performance, lower CPU and memory usage
 * And [composer the dependency manager for PHP](https://getcomposer.org) to start easy your project
