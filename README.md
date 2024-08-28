@@ -1,8 +1,8 @@
-# Docker compose PHP 8.3.8, Xdebug 3.3.2, Nginx 1.27.1, Redis 7.4.0 and MariaDB 11.4.3
+# Docker compose PHP 8.3.10, Xdebug 3.3.2, Nginx 1.27.1, Redis 7.4.0 and MariaDB 11.4.3
 
 ![docker](https://img.shields.io/badge/Docker-compose-brightgreen.svg)
 ![nginx](https://img.shields.io/badge/nginx-1.27.1-brightgreen.svg)
-![php](https://img.shields.io/badge/PHP_FPM-8.3.8-brightgreen.svg)
+![php](https://img.shields.io/badge/PHP_FPM-8.3.10-brightgreen.svg)
 ![xdebug](https://img.shields.io/badge/Xdebug-3.3.2-brightgreen.svg)
 ![phpunit](https://img.shields.io/badge/PHPUnit-11.3.1-brightgreen.svg)
 ![redis](https://img.shields.io/badge/Redis-7.4.0-brightgreen.svg)
@@ -15,7 +15,7 @@ The primary goal of this project is to create a streamlined and efficient develo
 # Services
 
 * Easy setup with [docker compose](https://docs.docker.com/compose/) and [Dockerfile](https://docs.docker.com/engine/reference/builder/) under usage from [Docker](https://www.docker.com)
-* Uses [PHP 8.3.8](https://www.php.net) for better performance, lower CPU and memory usage
+* Uses [PHP 8.3.10](https://www.php.net) for better performance, lower CPU and memory usage
 * And [composer the dependency manager for PHP](https://getcomposer.org) to start easy your project
 * Built on the lightweight [nginx 1.27.1](https://nginx.org) webserver
 * Debugging with [Xdebug 3.3.2](https://xdebug.org)
@@ -48,27 +48,7 @@ The primary goal of this project is to create a streamlined and efficient develo
 
 ## Example PHPUnit Test
 
-An example PHPUnit test is included in the `tests` directory:
-
-```php
-// tests/ExampleTest.php
-
-<?php
-
-declare(strict_types=1);
-
-use PHPUnit\Framework\TestCase;
-use App\Example;
-
-class ExampleTest extends TestCase
-{
-    public function testExample()
-    {
-        $example = new Example();
-        $this->assertTrue($example->doSomething());
-    }
-}
-```
+An example PHPUnit test is included in the `tests` directory.
 
 See also:
 [Blog-Post: Dockerize your PHP application with Nginx and PHP8 FPM](https://marc.it/dockerize-application-with-nginx-and-php8/)
