@@ -24,7 +24,7 @@ services:
             XDEBUG_MODE: "coverage"
 
     redis:
-        image: "redis:7.4.0-alpine"
+        image: "redis:7.4.1-alpine"
         environment:
             ALLOW_EMPTY_PASSWORD: "yes"
 
