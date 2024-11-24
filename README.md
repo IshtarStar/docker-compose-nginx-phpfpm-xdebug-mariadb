@@ -10,7 +10,7 @@
 
 # Goal of this project
 
-The primary goal of this project is to create a streamlined and efficient development environment using Docker Compose. This environment will consist of PHP-FPM, Xdebug, Nginx web server, and MariaDB, enabling developers to quickly and easily start working on their PHP projects.
+The primary goal of this project is to create a streamlined and efficient development environment using Docker Compose. This environment will consist of PHP-FPM, Xdebug, PHPUnit, Redis, Nginx web server, and MariaDB, enabling developers to quickly and easily start working on their PHP projects.
 
 # Services
 
