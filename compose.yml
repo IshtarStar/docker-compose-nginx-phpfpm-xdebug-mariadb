@@ -1,6 +1,6 @@
 services:
     nginx:
-        image: "nginx:1.27.2-alpine"
+        image: "nginx:1.27.3-alpine"
         restart: always
         working_dir: /app
         links:
@@ -24,7 +24,7 @@ services:
             XDEBUG_MODE: "coverage"
 
     redis:
-        image: "redis:7.4.1-alpine"
+        image: "redis:7.4.2-alpine"
         environment:
             ALLOW_EMPTY_PASSWORD: "yes"
 
