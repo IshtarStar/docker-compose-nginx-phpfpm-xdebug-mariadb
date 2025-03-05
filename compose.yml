@@ -1,6 +1,6 @@
 services:
     nginx:
-        image: "nginx:1.27.3-alpine"
+        image: "nginx:1.27.4-alpine"
         restart: always
         working_dir: /app
         links:
@@ -29,7 +29,7 @@ services:
             ALLOW_EMPTY_PASSWORD: "yes"
 
     mariadb:
-        image: "mariadb:11.6.2"
+        image: "mariadb:11.7.2"
         restart: always
         working_dir: /app
         volumes:
