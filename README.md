@@ -1,8 +1,8 @@
-# Docker compose PHP 8.4.12, Xdebug 3.4.6, Nginx 1.29.1, Redis 8.2.2 and MariaDB 12.0.2
+# Docker compose PHP 8.4.13, Xdebug 3.4.6, Nginx 1.29.1, Redis 8.2.2 and MariaDB 12.0.2
 
 ![docker](https://img.shields.io/badge/Docker-compose-brightgreen.svg)
 ![nginx](https://img.shields.io/badge/nginx-1.29.1-brightgreen.svg)
-![php](https://img.shields.io/badge/PHP_FPM-8.4.12-brightgreen.svg)
+![php](https://img.shields.io/badge/PHP_FPM-8.4.13-brightgreen.svg)
 ![phpunit](https://img.shields.io/badge/PHPUnit-11.4.3-brightgreen.svg)
 ![xdebug](https://img.shields.io/badge/Xdebug-3.4.6-brightgreen.svg)
 ![redis](https://img.shields.io/badge/Redis-8.2.2-brightgreen.svg)
@@ -15,7 +15,7 @@ The primary goal of this project is to create a streamlined and efficient develo
 # Services
 
 * Easy setup with [docker compose](https://docs.docker.com/compose/) and [Dockerfile](https://docs.docker.com/engine/reference/builder/) under usage from [Docker](https://www.docker.com)
-* Uses [PHP 8.4.12](https://www.php.net) for better performance, lower CPU and memory usage
+* Uses [PHP 8.4.13](https://www.php.net) for better performance, lower CPU and memory usage
 * And [composer the dependency manager for PHP](https://getcomposer.org) to start easy your project
 * Built on the lightweight [nginx 1.29.1](https://nginx.org) webserver
 * Debugging with [Xdebug 3.4.6](https://xdebug.org)
