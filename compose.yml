@@ -1,6 +1,6 @@
 services:
     nginx:
-        image: "nginx:1.29.0-alpine"
+        image: "nginx:1.29.1-alpine"
         restart: always
         working_dir: /app
         links:
@@ -24,12 +24,12 @@ services:
             XDEBUG_MODE: "coverage"
 
     redis:
-        image: "redis:8.0.2-alpine"
+        image: "redis:8.2.2-alpine"
         environment:
             ALLOW_EMPTY_PASSWORD: "yes"
 
     mariadb:
-        image: "mariadb:11.8.2"
+        image: "mariadb:12.0.2"
         restart: always
         working_dir: /app
         volumes:

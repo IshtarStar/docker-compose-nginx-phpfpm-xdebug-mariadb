@@ -1,4 +1,4 @@
-FROM php:8.4.10-fpm
+FROM php:8.4.13-fpm
 WORKDIR "/app"
 
 # Update
@@ -17,7 +17,7 @@ RUN pecl install -o -f redis && docker-php-ext-enable redis
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install xdebug
-RUN pecl install xdebug-3.4.4 && docker-php-ext-enable xdebug
+RUN pecl install xdebug-3.4.6 && docker-php-ext-enable xdebug
 
 # Cleanup
 RUN apt-get clean
